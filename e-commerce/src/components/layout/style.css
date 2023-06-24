@@ -1,0 +1,23 @@
+.item-container {
+    display: flex;
+    
+    /* justify-content: flex-end; */
+  }
+  
+  .item {
+    /* float: right; */
+    margin-right: auto; 
+  }
+  
+
+
+  @media (max-width: 768px) {
+    .item {
+        
+      margin-right: auto; /* Resets margin to align item at the start after page size decreases from the limit of medium */
+      margin-left: 1%; /* Aligns item to the start */
+    }
+  }
+  
+ 
+  
