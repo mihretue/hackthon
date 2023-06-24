@@ -1,4 +1,3 @@
-import './App.css';
 import ProductCatalog from './pages/productcatalog';
 function App() {
   return (
