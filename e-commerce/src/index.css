@@ -1,5 +1,24 @@
 body {
   margin: 0;
+  
+}
+*{
+  box-sizing: border-box;
+}
+
+#input1{
+  width: 95%;
+}
+#input2{
+  width: 95%;
+}
+.div1{
+  background-image: url("./Image/back.png");
+  height: 100vh;
+  padding-top: 50px;
+}
+.div2{
+  padding-bottom: 100px;
 }
 
 
