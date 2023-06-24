@@ -1,0 +1,52 @@
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: none;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.btn-outline-secondary {
+  border-radius: 0;
+  color: #333;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #f0f0f0;
+}
+
+.badge {
+  font-size: 0.75rem;
+  position: relative;
+  top: -1px;
+}
