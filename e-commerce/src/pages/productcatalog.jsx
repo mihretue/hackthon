@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiSearch, FiShoppingCart } from 'react-icons/fi';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import './ProductCatalog.css';
-import Navbar from '../components/layout/navigationbar';
 const products = [
   { id: 1, name: 'Product 1', price: 10.99, image: 'https://media.gettyimages.com/id/1384947546/photo/laptop-isolated-mockup-with-white-screen-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=kgcVDNTO2LbyIUAQ5qZpShDCt5fgR4o_TsGf1m8oIoU=', category: 'Category 1' },
   { id: 2, name: 'Product 2', price: 15.99, image: 'https://media.gettyimages.com/id/1276979385/photo/laptop-computer-blank-white-screen-on-table-in-cafe-background-laptop-with-blank-screen-on.jpg?s=612x612&w=0&k=20&c=ywr1A16NIpbmJUADXgllsrOst3jak68GXrqSw0O5zJc=', category: 'Category 2' },
@@ -22,6 +20,16 @@ const ProductCatalog = () => {
       setLoading(false);
     }, 5000);
   }, []);
+
+  const fetchProducts=()=>{
+    fetch('http://localhost:3003/getproducts')
+    .then(res=>res.json())
+    .then((res)=>{console.log(res)})
+    .catch((err)=>{console.log(err)})
+  }
+  useEffect(()=>{
+    fetchProducts()
+  },[])
 
   useEffect(() => {
     let newFilteredProducts = products;
@@ -61,7 +69,6 @@ const ProductCatalog = () => {
       ))}
     </div>
   ) : (<>
-    <Navbar />
     <div className="row">
       {filteredProducts.map(product => (
         <div className="col-md-3" key={product.id}>

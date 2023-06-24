@@ -1,20 +1,23 @@
 const mongoose = require('mongoose');
 const express = require('express');
-
 const app = express();
-const port = 3002;
+const port = 3003;
 const Product=require('./models/product')
-// mongoose.connect('mongodb://localhost:27017/egza', { useNewUrlParser: true, useUnifiedTopology: true });
+const cors=require('cors')
+app.use(express.json());
+app.use(cors())
+mongoose.connect('mongodb+srv://fanu0925:mongodb_fanu0925RG@cluster0.uvyfcr8.mongodb.net/eGza', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
-
-app.get('/api/products', async (req, res) => {
-  try {
-    const products = await Product.find();
-    res.json(products);
-  } catch (err) {
-    console.log(err);
-    res.status(500).send('Internal Server Error');
-  }
+app.get('/getproducts', (req, res) => {
+    Product.find().
+    then((docs)=>{
+      res.json(docs);
+    })
+    .catch((err)=>{
+        res.json(err);
+    })
 });
 
 app.post('/api/products', async (req, res) => {

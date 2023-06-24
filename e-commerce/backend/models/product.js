@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
     discountedPrice: { type: Number },
     discountPercentage: { type: Number },
     inStock: { type: Boolean, default: true },
-  });
+  },{collection:'eGza'});
   
   const Product = mongoose.model('Product', productSchema);
   
