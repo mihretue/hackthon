@@ -3,7 +3,7 @@ import Button  from '@mui/material/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "../layout/navigationbar"
 import bgImage from '../../resources/images/bg2.jpg'
-
+import Women from "../../resources/images/woman.jpg"
 
 
 function Home() {
@@ -21,7 +21,9 @@ function Home() {
         width: '100%',
         height: '100vh',
       }}>
-
+            <div className='container justify-content-center align-items-center border col-6 col-sm-8' >
+                        <p>this is for you</p>
+            </div>
         </div>
 
     </div>
